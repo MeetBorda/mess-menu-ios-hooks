@@ -1,21 +1,42 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import useMenu from '../src/hooks/useMenu'
 import firebase from '../src/firebase/firebase'
+import { LoadingOutlined } from '@ant-design/icons'
+import DisplayMenu from '../src/components/DisplayMenu'
+import Feedback from '../src/components/Feedback'
+import useDarkMode from '../src/components/hooks/useDarkMode'
+
 function App() {
   const [mealTime, setMealTime] = useState('');
   const [menu, setMenu] = useState([])
+  const [loading,setLoading] = useState(true)
+  const [theme] = useDarkMode()
   const db = firebase.database()
+  // const themer = ()=>{
+  //   window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+  //     if (e.matches) {
+  //       setTheme('dark')
+  //       console.log('dark mode is enabled');
+  //     } else {
+  //       setTheme('light')
+  //       console.log('dark mode is disabled')
+  //     }
+  //   });
+  // }
+
+  
 
   const fetchData = async term => {
-    meal()
-    console.log(mealTime);
+    const meal1 = meal()
+    //console.log(meal1);
+    
     try {
-      const snapshot = await db.ref('/cities/mumbai').once('value');
+      const snapshot = await db.ref('/cities/'+meal1).once('value');
       const value = snapshot.val().trains
       console.log('snapshot', snapshot.val().trains);
       console.log(value);
       setMenu(value)
+      setLoading(false)
     }
     catch (e) {
       console.log('error');
@@ -23,31 +44,45 @@ function App() {
   }
   useEffect(() => {
     fetchData()
-    console.log('from effect', menu);
   }, [mealTime])
 
   const meal = () => {
-    let mealTime = new Date().getHours()
-    if (mealTime >= 10 && mealTime <= 17)
+    let time = new Date(2020,1,1,18).getHours()
+    if (time >= 10 && time <= 17){
       setMealTime('mumbai')
-    if (mealTime > 17 && mealTime <= 23)
+      return 'mumbai'
+    }
+    if (time > 17 && time <= 23){
       setMealTime('delhi')
-    if (mealTime >= 0 && mealTime < 10)
+      return 'delhi'
+    }
+    if (time >= 0 && time < 10){
       setMealTime('indore')
-    return mealTime
+      return 'indore'
+    }
+    
+  }
+  
+  const renderContent = () =>{
+    console.log(theme)
+  return <>
+    <DisplayMenu dataSource={menu} timeOfDay={mealTime} isDark={theme} />
+    <Feedback />
+  </>
   }
 
-  return (
-    <div className="App">
-      <p>YOLO</p>
-      <p>{mealTime}</p>
-      <ul>
-        {menu.map((value, index) => {
-          return <li key={index}>{value}</li>
-        })}
-      </ul>
-    </div>
-  );
+  if(loading){
+    return(
+      <div style={{display:'flex',justifyContent:'center',flexDirection: 'column',alignItems: 'center  '}}>
+          <h1>Sabra ka fal meetha hota hai</h1>
+          <LoadingOutlined style={{position:'fixed',top:'50%',left:'50%'}} />
+        </div>
+    )
+  }
+  else{
+    return renderContent()
+  }
+  
 }
 
 export default App;
