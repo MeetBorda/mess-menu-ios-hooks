@@ -1,8 +1,9 @@
 import React ,{ Component } from 'react';
 import { Modal } from 'antd';
 import { MessageOutlined } from '@ant-design/icons';
-import 'antd/dist/antd.css';
 
+import 'antd/dist/antd.css';
+import './Feedback.css'
 export default class Feedback extends Component{
    state = {visible:false}
    showModal = () => {
@@ -29,8 +30,9 @@ export default class Feedback extends Component{
    render(){
 
       return (<div >
-    <a  onClick={this.showModal} style={{position:'fixed',bottom:'50px',right:'10px'}}><MessageOutlined style={feedBackStyle} /></a>
+    <a  onClick={this.showModal} style={{position:'fixed',bottom:'50px',right:'10px'}}><MessageOutlined className={'feedBackStyle'} /></a>
     <Modal
+          bodyStyle={{color:'rgb(65,65,65)'}}
           title="Basic Modal"
           visible={this.state.visible}
           onOk={this.handleOk}
@@ -46,7 +48,7 @@ export default class Feedback extends Component{
 
 }
 
-  const feedBackStyle = {
-      fontSize: '32px',
-      color: 'black'
-  }
+  // const feedBackStyle = {
+  //     fontSize: '32px',
+  //     color: 'black'
+  // }

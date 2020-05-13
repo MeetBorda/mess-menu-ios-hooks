@@ -1,3 +1,20 @@
 .App {
   text-align: center;
 }
+#root {
+  height: 100vh;
+  touch-action: none;
+  background-color: whitesmoke
+}
+.loading{
+color:rgb(65,65,65)
+}
+
+@media (prefers-color-scheme:dark){
+  #root{
+    background-color: rgb(65, 65, 65);
+  }
+  .loading{
+    color:whitesmoke
+  }
+}

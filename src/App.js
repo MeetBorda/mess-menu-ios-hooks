@@ -4,13 +4,11 @@ import firebase from '../src/firebase/firebase'
 import { LoadingOutlined } from '@ant-design/icons'
 import DisplayMenu from '../src/components/DisplayMenu'
 import Feedback from '../src/components/Feedback'
-import useDarkMode from '../src/components/hooks/useDarkMode'
 
 function App() {
   const [mealTime, setMealTime] = useState('');
   const [menu, setMenu] = useState([])
   const [loading,setLoading] = useState(true)
-  const [theme] = useDarkMode()
   const db = firebase.database()
   // const themer = ()=>{
   //   window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
@@ -64,18 +62,19 @@ function App() {
   }
   
   const renderContent = () =>{
-    console.log(theme)
   return <>
-    <DisplayMenu dataSource={menu} timeOfDay={mealTime} isDark={theme} />
+    <DisplayMenu dataSource={menu} timeOfDay={mealTime} />
     <Feedback />
   </>
   }
 
   if(loading){
+    console.log(window.matchMedia('(prefers-color-scheme: dark'))
+
     return(
-      <div style={{display:'flex',justifyContent:'center',flexDirection: 'column',alignItems: 'center  '}}>
-          <h1>Sabra ka fal meetha hota hai</h1>
-          <LoadingOutlined style={{position:'fixed',top:'50%',left:'50%'}} />
+      <div className={'loading'} style={{display:'flex',justifyContent:'center',flexDirection: 'column',alignItems: 'center  '}}>
+          <h1 className={'loading'}>Sabra ka fal meetha hota hai</h1>
+          <LoadingOutlined className={'loading'} style={{position:'fixed',top:'50%',left:'50%'}} />
         </div>
     )
   }

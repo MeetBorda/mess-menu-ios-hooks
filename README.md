@@ -1,5 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## New Tasks
+- Modal Theme and Functions
+- remove Firebasw Warning
+- Make the Application PWA (Workers)
+- Change Colors
+- Add Meta - linked to making it a PWA
+
 ## Available Scripts
 
 In the project directory, you can run:

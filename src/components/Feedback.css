@@ -1,0 +1,9 @@
+.feedBackStyle{
+   font-size: 32px;
+   color: rgb(65,65,65)
+}
+@media (prefers-color-scheme:dark){
+   .feedBackStyle{
+      color:whitesmoke
+   }
+}
