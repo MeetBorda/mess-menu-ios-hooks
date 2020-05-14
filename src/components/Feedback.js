@@ -1,54 +1,41 @@
-import React ,{ Component } from 'react';
-import { Modal } from 'antd';
-import { MessageOutlined } from '@ant-design/icons';
-
+import React, { Component } from 'react';
+import { StarFilled } from '@ant-design/icons';
+import { Rate, Popover } from 'antd'
 import 'antd/dist/antd.css';
 import './Feedback.css'
-export default class Feedback extends Component{
-   state = {visible:false}
-   showModal = () => {
-      this.setState({
-        visible: true,
-      });
-    };
-   
-    handleOk = e => {
-      console.log(e);
-      this.setState({
-        visible: false
-      });
-      // ENTER LOGIC FOR FEEDBACK AND COMPONENTs
 
-    };
-   
-    handleCancel = e => {
-      console.log(e);
-      this.setState({
-        visible: false,
-      });
-    };
-   render(){
+export default class Feedback extends Component {
+  state = { visible: false, valueStored: null }
+  hide = () => {
+    this.setState({
+      visible: false,
+    });
+  };
 
-      return (<div >
-    <a  onClick={this.showModal} style={{position:'fixed',bottom:'50px',right:'10px'}}><MessageOutlined className={'feedBackStyle'} /></a>
-    <Modal
-          bodyStyle={{color:'rgb(65,65,65)'}}
-          title="Basic Modal"
+  handleVisibleChange = visible => {
+    this.setState({ visible });
+  };
+
+  render() {
+    return (
+      <div>
+        <Popover
+          arrowPointAtCenter
+          trigger="click"
           visible={this.state.visible}
-          onOk={this.handleOk}
-          onCancel={this.handleCancel}
-        >
-          <p>Some contents...</p>
-          <p>Some contents...</p>
-          <p>Some contents...</p>
-        </Modal>
+          onVisibleChange={this.handleVisibleChange}
+          content={
+            this.state.valueStored != null ? 
+            <Rate className={'rate'} defaultValue={this.state.valueStored} disabled />:
+            <Rate className={'rate'} defaultValue={3}
+              onChange={(e) => {
+                this.setState({ valueStored: e })
+                } }
+                 />
+          }>
+          <StarFilled className='star' />
+        </Popover>
       </div>
-      )
-   }
-
+    )
+  }
 }
-
-  // const feedBackStyle = {
-  //     fontSize: '32px',
-  //     color: 'black'
-  // }
