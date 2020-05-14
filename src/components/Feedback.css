@@ -2,8 +2,56 @@
    font-size: 32px;
    color: rgb(65,65,65)
 }
+
+.rate  {
+   display: inline-grid;
+   touch-action: none;
+}
+.ant-rate{
+   color:rgb(65,65,65)
+}
+
+.star{
+   font-size: 20px;
+   position: fixed;
+   right: 15px;
+   bottom: 30px;
+   touch-action:none;
+   color: rgb(65,65,65);
+}
+
+.ant-popover-inner-content
+{
+   padding-right: 8px;
+   border-right-style: solid;
+   border-right-width: 0px;
+   padding-left: 16px;
+   background-color: white;
+}
+.ant-popover-placement-top > .ant-popover-content > .ant-popover-arrow, .ant-popover-placement-topLeft > .ant-popover-content > .ant-popover-arrow, .ant-popover-placement-topRight > .ant-popover-content > .ant-popover-arrow{
+
+   border-right-color: white;
+   border-bottom: white;
+}
+.ant-popover-arrow{
+   background-color: white;
+}
+
 @media (prefers-color-scheme:dark){
-   .feedBackStyle{
-      color:whitesmoke
+   .star{
+      color: whitesmoke;
+   }
+
+   .ant-popover-inner-content
+   {
+       background-color: white;
+   }
+   .ant-popover-placement-top > .ant-popover-content > .ant-popover-arrow, .ant-popover-placement-topLeft > .ant-popover-content > .ant-popover-arrow, .ant-popover-placement-topRight > .ant-popover-content > .ant-popover-arrow{
+   
+      border-right-color: white;
+      border-bottom: white;
+   }
+   .ant-popover-arrow{
+      background-color: white;
    }
 }

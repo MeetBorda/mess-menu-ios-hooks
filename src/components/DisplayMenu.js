@@ -3,8 +3,7 @@ import { List } from 'antd'
 import './DisplayMenu.css'
 
 function DisplayMenu(props) {
-   
-   console.log(props)
+
    return (
       <div className='menuStyle'>
          <h1 className={"headerStyle"}>{props.timeOfDay.toUpperCase()}</h1>

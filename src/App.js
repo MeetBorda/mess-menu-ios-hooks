@@ -10,34 +10,17 @@ function App() {
   const [menu, setMenu] = useState([])
   const [loading,setLoading] = useState(true)
   const db = firebase.database()
-  // const themer = ()=>{
-  //   window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
-  //     if (e.matches) {
-  //       setTheme('dark')
-  //       console.log('dark mode is enabled');
-  //     } else {
-  //       setTheme('light')
-  //       console.log('dark mode is disabled')
-  //     }
-  //   });
-  // }
-
-  
 
   const fetchData = async term => {
     const meal1 = meal()
-    //console.log(meal1);
     
     try {
       const snapshot = await db.ref('/cities/'+meal1).once('value');
       const value = snapshot.val().trains
-      console.log('snapshot', snapshot.val().trains);
-      console.log(value);
       setMenu(value)
       setLoading(false)
     }
     catch (e) {
-      console.log('error');
     }
   }
   useEffect(() => {
@@ -69,7 +52,6 @@ function App() {
   }
 
   if(loading){
-    console.log(window.matchMedia('(prefers-color-scheme: dark'))
 
     return(
       <div className={'loading'} style={{display:'flex',justifyContent:'center',flexDirection: 'column',alignItems: 'center  '}}>
