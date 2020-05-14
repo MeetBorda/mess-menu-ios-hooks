@@ -1,6 +1,6 @@
 {
-  "short_name": "Mess Menu",
-  "name": "Mess Menu NMIMS Shirpur",
+  "short_name": "React App",
+  "name": "Create React App Sample",
   "icons": [
     {
       "src": "favicon.ico",

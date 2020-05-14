@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/mess-menu-ios-hooks/static/css/main.be65ba57.chunk.css",
+    "main.js": "/mess-menu-ios-hooks/static/js/main.45d61c12.chunk.js",
+    "main.js.map": "/mess-menu-ios-hooks/static/js/main.45d61c12.chunk.js.map",
+    "runtime-main.js": "/mess-menu-ios-hooks/static/js/runtime-main.f9e242a9.js",
+    "runtime-main.js.map": "/mess-menu-ios-hooks/static/js/runtime-main.f9e242a9.js.map",
+    "static/css/2.d7262850.chunk.css": "/mess-menu-ios-hooks/static/css/2.d7262850.chunk.css",
+    "static/js/2.626fbea0.chunk.js": "/mess-menu-ios-hooks/static/js/2.626fbea0.chunk.js",
+    "static/js/2.626fbea0.chunk.js.map": "/mess-menu-ios-hooks/static/js/2.626fbea0.chunk.js.map",
+    "index.html": "/mess-menu-ios-hooks/index.html",
+    "precache-manifest.881f0f839355b1441bd28350b7e49af1.js": "/mess-menu-ios-hooks/precache-manifest.881f0f839355b1441bd28350b7e49af1.js",
+    "service-worker.js": "/mess-menu-ios-hooks/service-worker.js",
+    "static/css/2.d7262850.chunk.css.map": "/mess-menu-ios-hooks/static/css/2.d7262850.chunk.css.map",
+    "static/css/main.be65ba57.chunk.css.map": "/mess-menu-ios-hooks/static/css/main.be65ba57.chunk.css.map",
+    "static/js/2.626fbea0.chunk.js.LICENSE.txt": "/mess-menu-ios-hooks/static/js/2.626fbea0.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f9e242a9.js",
+    "static/css/2.d7262850.chunk.css",
+    "static/js/2.626fbea0.chunk.js",
+    "static/css/main.be65ba57.chunk.css",
+    "static/js/main.45d61c12.chunk.js"
+  ]
+}
