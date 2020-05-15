@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/mess-menu-ios-hooks/precache-manifest.881f0f839355b1441bd28350b7e49af1.js"
+  "/mess-menu-ios-hooks/precache-manifest.f7541a64f61f77dfca4dfb89ca55c736.js"
 );
 
 self.addEventListener('message', (event) => {

@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "60d05b733e0a38e865dd48608abd42f7",
+    "revision": "8fb7a76b7cd96744f814c17b8e50b8ae",
     "url": "/mess-menu-ios-hooks/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mess-menu-ios-hooks/static/css/2.d7262850.chunk.css"
   },
   {
-    "revision": "5905d48c5e71d0130c60",
-    "url": "/mess-menu-ios-hooks/static/css/main.be65ba57.chunk.css"
+    "revision": "2fa78dced52935f1dc6f",
+    "url": "/mess-menu-ios-hooks/static/css/main.70bbca89.chunk.css"
   },
   {
     "revision": "166f7c69a0645c9e991f",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mess-menu-ios-hooks/static/js/2.626fbea0.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5905d48c5e71d0130c60",
-    "url": "/mess-menu-ios-hooks/static/js/main.45d61c12.chunk.js"
+    "revision": "2fa78dced52935f1dc6f",
+    "url": "/mess-menu-ios-hooks/static/js/main.18dc9df4.chunk.js"
   },
   {
     "revision": "9afa5bc39bfefaed2b37",
