@@ -1,15 +1,27 @@
 .headerStyle{
    color: rgb(65, 65, 65);
+   word-break: break-all;
+   text-align: center;
  }
- 
+
 .light{
     color:rgb(65,65,65);
  }
 
 .listStyle{
-    color: rgb(65, 65, 65)
+    color: rgb(65, 65, 65);
  }
- 
+ .ant-list-items{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   overflow: hidden;
+   word-break: break-all;
+ }
+
+ .refreshing .lds-ellipsis div {
+   background: rgb(65, 65, 65); }
 .menuStyle{
    display: flex;
    justify-content:center;

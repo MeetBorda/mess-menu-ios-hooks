@@ -3,7 +3,7 @@ import { StarFilled } from '@ant-design/icons';
 import { Rate, Popover } from 'antd'
 import 'antd/dist/antd.css';
 import './Feedback.css'
-
+import firebase from '../firebase/firebase'
 export default class Feedback extends Component {
   state = { visible: false, valueStored: null }
   hide = () => {
@@ -15,7 +15,18 @@ export default class Feedback extends Component {
   handleVisibleChange = visible => {
     this.setState({ visible });
   };
-
+  handleChange=(e)=>{
+    console.log('val',e)
+    firebase.database().ref('/feedback/').push({rating:e},
+       function(error) {
+      if (error) {
+        console.log(error)
+      } else {
+        console.log(e)
+      }
+    });
+  }
+  
   render() {
     return (
       <div>
@@ -28,9 +39,7 @@ export default class Feedback extends Component {
             this.state.valueStored != null ? 
             <Rate className={'rate'} defaultValue={this.state.valueStored} disabled />:
             <Rate className={'rate'} defaultValue={3}
-              onChange={(e) => {
-                this.setState({ valueStored: e })
-                } }
+              onChange={this.handleChange }
                  />
           }>
           <StarFilled className='star' />

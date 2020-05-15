@@ -1,10 +1,9 @@
-.App {
-  text-align: center;
-}
+
 #root {
   height: 100vh;
   touch-action: none;
-  background-color: whitesmoke
+  background-color: whitesmoke;
+  padding: env(safe-area-inset-top);
 }
 .loading{
 color:rgb(65,65,65)

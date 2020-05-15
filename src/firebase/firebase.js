@@ -1,4 +1,5 @@
-import firebase from 'firebase'
+import 'firebase/database'
+import app from 'firebase/app'
 const config = {
    apiKey: process.env.apiKey,
    authDomain: "quantiphi-239fd.firebaseapp.com",
@@ -8,5 +9,5 @@ const config = {
    messagingSenderId: "1051893397943",
    appId: "1:1051893397943:web:ff1891ec6c45b378139032"
  };
-firebase.initializeApp(config);
-export default firebase;
+app.initializeApp(config);
+export default app;
